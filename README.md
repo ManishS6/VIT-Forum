@@ -10,6 +10,8 @@ TO-DOs:
 - [x] Backend.
 - [x] Integrate Frontend and Backend.
 - [x] Google Auth restricted to vitstudent.ac.in
+- [ ] JWT with FireBase google signin custom token 
+- [ ] Refresh JWT Token
 - [ ] Host on Netlify as new site 
 - [ ] Dockerize the app
 - [ ] Deploy on cloud.

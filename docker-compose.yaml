@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: ../deploy/server.Dockerfile
+    image: vit-forum-server
+    container_name: VIT-Forum-node-server
+    command: npm start
+    volumes:
+      - ./server/:/app
+      - /app/node_modules
+    ports:
+      - "5000:5000"
+    env_file: ./server/.env
+
+  dev:
+    build:
+      context: ./frontend
+      dockerfile: ../deploy/client.Dockerfile
+    image: vit-forum-client
+    container_name: VIT-Forum-react-client
+    command: npm start
+    volumes:
+      - ./frontend/:/app
+      - /app/node_modules
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+
+  client:
+    build:
+      context: ./frontend/
+      dockerfile: ../deploy/production.Dockerfile
+    image: vit-forum-client-dev
+    container_name: VIT-Forum-react-client-dev
+    command: npm start
+    volumes:
+      - ./frontend/:/app
+      - /app/node_modules
+    depends_on:
+      - server
+    ports:
+      - "80:4000"
+
+volumes:
+  node_modules:

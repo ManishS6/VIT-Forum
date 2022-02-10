@@ -1,0 +1,9 @@
+.gitignore
+.dockerignore
+.netlify
+deploy/client.Dockerfile
+deploy/server.Dockerfile
+deploy/production.Dockerfile
+frontend/build
+**/node_modules
+README.md
