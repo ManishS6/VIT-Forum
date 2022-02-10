@@ -13,8 +13,3 @@ TO-DOs:
 - [x] Netlify: Continuos Integration with Github Repo.
 
 Branched to React+FireBase.
-
-# Contributors
-<a href="https://github.com/ManishS6/VIT-Forum/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ManishS6/VIT-Forum" />
-</a>
